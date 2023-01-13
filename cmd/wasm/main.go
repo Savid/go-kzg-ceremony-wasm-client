@@ -60,20 +60,6 @@ func contribute(this js.Value, args []js.Value) (any, error) {
 		return nil, fmt.Errorf("failed to contribute: %w", err)
 	}
 
-	prevC, err := contribution.DecodeContribution([]byte(args[0].String()))
-	if err != nil {
-		return nil, fmt.Errorf("failed to deserialize contribution: %w", err)
-	}
-
-	ok, err := c.Verify(prevC)
-	if err != nil {
-		return nil, fmt.Errorf("failed to verify contribution: %w", err)
-	}
-
-	if !ok {
-		return nil, fmt.Errorf("invalid contribution")
-	}
-
 	jsonString, err := contribution.Encode(c)
 	if err != nil {
 		return nil, fmt.Errorf("failed to serialize contribution: %w", err)
