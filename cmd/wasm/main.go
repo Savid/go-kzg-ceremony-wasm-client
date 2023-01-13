@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"syscall/js"
 
-	"github.com/savid/go-kzg-ceremony-client/contribution"
+	"github.com/savid/go-kzg-ceremony-wasm-client/contribution"
 )
 
 type fn func(this js.Value, args []js.Value) (any, error)

@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/savid/go-kzg-ceremony-client/extrand"
+	"github.com/savid/go-kzg-ceremony-wasm-client/extrand"
 	"github.com/stretchr/testify/require"
 )
 

@@ -1,4 +1,4 @@
-module github.com/savid/go-kzg-ceremony-client
+module github.com/savid/go-kzg-ceremony-wasm-client
 
 go 1.19
 
