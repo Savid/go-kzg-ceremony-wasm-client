@@ -11,6 +11,7 @@ env:
 
 jobs:
   tagged-release:
+    permissions: write-all
     name: "Tagged Release"
     runs-on: "ubuntu-latest"
     steps:
@@ -23,13 +24,13 @@ jobs:
           mkdir build
           cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" build/
           cd cmd/wasm
-          go build -o ../../build/go-kzg-ceremony-client.wasm
+          go build -o ../../build/go-kzg-ceremony-wasm-client.wasm
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           files: |
             LICENSE
-            build/go-kzg-ceremony-client.wasm
+            build/go-kzg-ceremony-wasm-client.wasm
             build/wasm_exec.js
             index.html
